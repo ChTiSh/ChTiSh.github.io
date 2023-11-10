@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage":"https://ChTiSh.github.io/my-app",
+  "homepage": "https://ChTiSh.github.io/",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -24,7 +24,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "plugins": [
+      "html"
+  ]
   },
   "browserslist": {
     "production": [
@@ -39,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-html": "^7.1.0",
     "gh-pages": "^6.0.0"
   }
 }
