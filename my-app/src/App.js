@@ -7,38 +7,38 @@ function App() {
     <div className="App">
       {/* The <header> element shows the navigation or the opening part of the web page. */}
       <header className="App-header">
-        <nav className="App-nav ">
+        <nav className="App-nav flex justify-between">
           <div className="logo nav-left">
-            <a href="#home"><button>C.Shen</button></a>
+            <a href="#home"><button className='font-logo text-2xl'>C.Shen</button></a>
           </div>
-          <div className="logo nav-right">
-            <ul>
+          <div className="logo nav-right flex justify-evenly">
+            <ul className='flex justify-evenly'>
               <li><a href="#projects">Projects</a></li>
               <li><a href="#aboutme">About Me</a></li>
               <li><a href="#education">Education</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
             <div className="mode-switch">
-              <button>Dark Mode</button>
+              <button>Light</button>
             </div>
           </div>
-          
         </nav>
       </header>
 
       {/* The <main> element contains the main content of the web page. */}
       <main className="App-main">
         <section id='home'>
-          <div className='intro-top'>
-            <h1>Hi, I'm Chen</h1>
-            <h2>A frontend Engineer</h2>
-            <h4>Previously a lawyer, fashion marketer, financier, and entrepreneur</h4>
+          <div className='my-40 mx-40'>
+            <div className='intro-top'>
+              <h1 className='font-accent text-8xl'>Hi, I'm Chen</h1>
+              <h2 className='text-6xl'>A <strong className='text-accent'>frontend</strong> Engineer</h2>
+              <h4 className='text-2xl'>Previously a lawyer, fashion marketer, financier, and entrepreneur</h4>
+            </div>
+            <div className='intro-bottom my-40'>
+              <h2 className='text-6xl'>With a huge passion for accessibility and design</h2>
+              <button>Resume</button>
+            </div>
           </div>
-          <div className='intro-bottom'>
-            <h4>With a huge passion for accessibility and design</h4>
-            <button>Resume</button>
-          </div>
-
         </section>
         <section id='aboutme'>
         <svg width="100vw" height="100vw" viewBox="0 0 1214 721" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,6 +92,10 @@ function App() {
           <p>Take a short break</p>
           <p>Enjoy a joke</p>
           <button>Get a joke</button>
+        </div>
+        <div className='copyright'>
+          <p>© 2024 Chen Shen</p>
+          <p>Designed with Figma, built with React and TailwindCSS.</p>
         </div>
       </footer>
     </div>
