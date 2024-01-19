@@ -15,7 +15,10 @@ module.exports = {
         'accent': ['Nanum Brush Script', 'Comic Sans MS', 'Brush Script MT', 'Lucida Handwriting', 'cursive'],
         'logo': ['Nanum Pen Script', 'Comic Sans MS', 'Brush Script MT', 'Lucida Handwriting', 'cursive']
       },
-      
+      screens: {
+        'tablet': '640px',
+        'desktop': '1280px',
+      },
     },
   },
   plugins: [],

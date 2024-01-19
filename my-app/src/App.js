@@ -11,10 +11,10 @@ function App() {
           <div className="logo nav-left">
             <a href="#home"><button className='font-logo text-2xl'>C.Shen</button></a>
           </div>
-          <div className="logo nav-right flex justify-evenly">
-            <ul className='flex justify-evenly'>
+          <div className="logo nav-right flex justify-evenly text-xs desktop:text-xl">
+            <ul className='flex justify-evenly '>
+              <li><a href="#aboutme">About</a></li>
               <li><a href="#projects">Projects</a></li>
-              <li><a href="#aboutme">About Me</a></li>
               <li><a href="#education">Education</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
@@ -28,14 +28,14 @@ function App() {
       {/* The <main> element contains the main content of the web page. */}
       <main className="App-main">
         <section id='home'>
-          <div className='my-40 mx-40'>
+          <div className='my-20 desktop:my-40 m-auto w-3/4'>
             <div className='intro-top'>
-              <h1 className='font-accent text-8xl'>Hi, I'm Chen</h1>
-              <h2 className='text-6xl'>A <strong className='text-accent'>frontend</strong> Engineer</h2>
-              <h4 className='text-2xl'>Previously a lawyer, fashion marketer, financier, and entrepreneur</h4>
+              <h1 className='font-accent text-4xl desktop:text-8xl'>Hi, I'm Chen</h1>
+              <h2 className='text-2xl desktop:text-6xl'>A <strong className='text-accent'>frontend</strong> Engineer</h2>
+              <h4 className='text-sm desktop:text-2xl'>Previously a lawyer, fashion marketer, financier, and entrepreneur</h4>
             </div>
-            <div className='intro-bottom my-40'>
-              <h2 className='text-6xl'>With a huge passion for accessibility and design</h2>
+            <div className='intro-bottom my-10 desktop:my-40'>
+              <h2 className='text-2xl desktop:text-6xl'>With a huge passion for accessibility and design</h2>
               <button>Resume</button>
             </div>
           </div>
