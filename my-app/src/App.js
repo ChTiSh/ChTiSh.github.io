@@ -1,27 +1,59 @@
 import './App.css';
 import FeaturedProject from './components/FeaturedProject.jsx';
 import ContactCard from './components/ContactCard.jsx';
+import { useEffect, useState } from 'react';
+import AboutMe from './components/AboutMe.jsx';
+import NavBar from './components/NavBar.jsx';
+import SideBar from './components/SideBar.jsx';
 
 function App() {
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const toggleSideBar = () => {
+    setIsSideBarOpen(!isSideBarOpen);
+  }
+
+  
+  //placeholder for intersection observer
+  useEffect(() => {
+    // Create a new IntersectionObserver instance
+    let observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fadeIn');
+        }
+      });
+    });
+  
+    // Select the elements to be observed
+    const elements = document.querySelectorAll('.yourElementSelector');
+    elements.forEach(element => {
+      observer.observe(element);
+    });
+  
+    // Clean up the observer on component unmount
+    return () => {
+      observer.disconnect();
+    };
+  }, []); 
+
   return (
     <div className="App">
       {/* The <header> element shows the navigation or the opening part of the web page. */}
       <header className="App-header">
-        <nav className="App-nav flex justify-between">
+        <nav className="App-nav flex justify-between sticky top-0 h-12 bg-dark items-center">
           <div className="logo nav-left">
             <a href="#home"><button className='font-logo text-2xl'>C.Shen</button></a>
           </div>
-          <div className="logo nav-right flex justify-evenly text-xs desktop:text-xl">
-            <ul className='flex justify-evenly '>
-              <li><a href="#aboutme">About</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#education">Education</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div className="mode-switch">
-              <button>Light</button>
-            </div>
-          </div>
+          
+          <NavBar />
+          { isSideBarOpen ?
+            <SideBar /> : 
+            <button className="tablet:hidden nav-right" onClick={toggleSideBar}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+            </svg>
+          </button>
+          }
         </nav>
       </header>
 
@@ -47,10 +79,13 @@ function App() {
 
 
           <img src='https://via.placeholder.com/150' alt='profile picture' />
+          <AboutMe />
           <h2>About Me</h2>
           <p>lorem ipsum terja aquafaba. Maktig fotogyn emfoni. Anajörårade diting. Mytoskop ärad. Icke-binär preren: om nyhetsundvikare saguheten. </p>
         </section>
         <section id='projects'>
+
+          {/* This section will benefit from lazy loading images. */}
           <h2>Projects</h2>
           <div className='keyProjects'>
             <FeaturedProject />
