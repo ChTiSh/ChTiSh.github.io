@@ -10,6 +10,7 @@ module.exports = {
         'accent':'#f2a64a',
         'dark': '#201B2C',
         'warning': '#d95e41',
+        'light': '#FAFBFB',
       },
       fontFamily: {
         'sans':['Libre Franklin', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Segoe UI', 'Roboto', 'Oxygen',

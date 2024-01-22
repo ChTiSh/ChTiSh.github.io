@@ -1,18 +1,25 @@
 import './App.css';
 import FeaturedProject from './components/FeaturedProject.jsx';
 import ContactCard from './components/ContactCard.jsx';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, createContext } from 'react';
 import AboutMe from './components/AboutMe.jsx';
 import NavBar from './components/NavBar.jsx';
 import SideBar from './components/SideBar.jsx';
 
+export const ThemeContext = createContext();
+  
 function App() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const toggleSideBar = () => {
     setIsSideBarOpen(!isSideBarOpen);
   }
-
   
+  const [isLightMode, setLightMode] = useState(false);
+  const setMode = () => {
+    setLightMode(!isLightMode);
+    console.log('button is clicked')
+}
+
   //placeholder for intersection observer
   useEffect(() => {
     // Create a new IntersectionObserver instance
@@ -37,10 +44,11 @@ function App() {
   }, []); 
 
   return (
+    <ThemeContext.Provider value={{isLightMode, setMode}}>
     <div className="App">
       {/* The <header> element shows the navigation or the opening part of the web page. */}
       <header className="App-header">
-        <nav className="App-nav flex justify-between sticky top-0 h-12 bg-dark items-center">
+        <nav className="App-nav flex justify-between sticky top-0 h-12 items-center">
           <div className="logo nav-left">
             <a href="#home"><button className='font-logo text-2xl'>C.Shen</button></a>
           </div>
@@ -134,6 +142,7 @@ function App() {
         </div>
       </footer>
     </div>
+    </ThemeContext.Provider>
   );
 }
 
