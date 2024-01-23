@@ -18,11 +18,11 @@ const NavBar = () => {
     return (
         <div  className="hidden tablet:block " >
             <div className="logo nav-right flex justify-between align-middle desktop:text-xl">
-                <ul className='flex text-base border-r-2 '>
-                    <li className='px-5 hover:border-b rounded border-accent'><a href="#aboutme">About</a></li>
-                    <li className='px-5 hover:border-b rounded border-accent'><a href="#projects">Projects</a></li>
-                    <li className='px-5 hover:border-b rounded border-accent'><a href="#education">Education</a></li>
-                    <li className='px-5 hover:border-b rounded border-accent'><a href="#contact">Contact</a></li>
+                <ul className='flex text-sm pt-1 border-r px-2'>
+                    <li className='px-5 hover:underline hover:decoration-accent decoration-solid underline-offset-4 decoration-4 hover:font-bold'><a href="#aboutme">About</a></li>
+                    <li className='px-5 hover:underline hover:decoration-accent decoration-solid underline-offset-4 decoration-4 hover:font-bold'><a href="#projects">Projects</a></li>
+                    <li className='px-5 hover:underline hover:decoration-accent decoration-solid underline-offset-4 decoration-4 hover:font-bold'><a href="#education">Education</a></li>
+                    <li className='px-5 hover:underline hover:decoration-accent decoration-solid underline-offset-4 decoration-4 hover:font-bold'><a href="#contact">Contact</a></li>
                 </ul>
                 <div className="mode-switch desktop:text-base">
                     {!isLightMode ? 

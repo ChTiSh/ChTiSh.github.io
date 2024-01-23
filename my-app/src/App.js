@@ -5,6 +5,8 @@ import { useEffect, useState, createContext } from 'react';
 import AboutMe from './components/AboutMe.jsx';
 import NavBar from './components/NavBar.jsx';
 import SideBar from './components/SideBar.jsx';
+import Intro from './components/Intro.jsx';
+
 
 export const ThemeContext = createContext();
   
@@ -47,10 +49,10 @@ function App() {
     <ThemeContext.Provider value={{isLightMode, setMode}}>
     <div className="App">
       {/* The <header> element shows the navigation or the opening part of the web page. */}
-      <header className="App-header">
-        <nav className="App-nav flex justify-between sticky top-0 h-12 items-center">
-          <div className="logo nav-left">
-            <a href="#home"><button className='font-logo text-2xl'>C.Shen</button></a>
+      <header className="App-header sticky top-0 bg-dark">
+        <nav className="App-nav flex justify-end h-12 items-center">
+          <div className="absolute logo nav-left -left-4 w-46 shadow-inner rounded-full bg-primary">
+            <a href="#home"><button className='font-logo text-2xl px-8 py-1 hover:transition hover:duration-1000 ease-in-out hover:text-accent '><strong className='text-accent'>C</strong>hen <strong className='text-accent'>S</strong>hen</button></a>
           </div>
           
           <NavBar />
@@ -68,25 +70,13 @@ function App() {
       {/* The <main> element contains the main content of the web page. */}
       <main className="App-main">
         <section id='home'>
-          <div className='my-20 desktop:my-40 m-auto w-3/4'>
-            <div className='intro-top'>
-              <h1 className='font-accent text-4xl desktop:text-8xl'>Hi, I'm Chen</h1>
-              <h2 className='text-2xl desktop:text-6xl'>A <strong className='text-accent'>frontend</strong> Engineer</h2>
-              <h4 className='text-sm desktop:text-2xl'>Previously a lawyer, fashion marketer, financier, and entrepreneur</h4>
-            </div>
-            <div className='intro-bottom my-10 desktop:my-40'>
-              <h2 className='text-2xl desktop:text-6xl'>With a huge passion for accessibility and design</h2>
-              <button>Resume</button>
-            </div>
-          </div>
+          <Intro />
         </section>
         <section id='aboutme'>
         <svg width="100vw" height="100vw" viewBox="0 0 1214 721" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0L1214 6.10352e-05V720.521L0 472.718V0Z" fill="#332C44"/>
         </svg>
 
-
-          <img src='https://via.placeholder.com/150' alt='profile picture' />
           <AboutMe />
           <h2>About Me</h2>
           <p>lorem ipsum terja aquafaba. Maktig fotogyn emfoni. Anajörårade diting. Mytoskop ärad. Icke-binär preren: om nyhetsundvikare saguheten. </p>
