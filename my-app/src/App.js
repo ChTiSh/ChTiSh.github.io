@@ -48,14 +48,14 @@ function App() {
   return (
     <ThemeContext.Provider value={{isLightMode, setMode}}>
     <div className="App">
+      <div id='pageTop'></div>
       {/* The <header> element shows the navigation or the opening part of the web page. */}
       <header className="App-header sticky top-0 bg-dark">
         <nav className="App-nav flex justify-end h-12 items-center">
-          <div className="absolute logo nav-left -left-4 w-46 shadow-inner rounded-full bg-primary">
-            <a href="#home"><button className='font-logo text-2xl px-8 py-1 hover:transition hover:duration-1000 ease-in-out hover:text-accent '><strong className='text-accent'>C</strong>hen <strong className='text-accent'>S</strong>hen</button></a>
+          <div className="absolute logo nav-left -left-4 w-46 shadow-inner rounded-full bg-gradient-to-r from-black to-primary">
+            <a href="#pageTop"><button className='font-logo text-2xl px-8 py-1 hover:transition hover:duration-1000 ease-in-out hover:text-accent'><strong className='text-accent'>C</strong>hen <strong className='text-accent'>S</strong>hen</button></a>
           </div>
-          
-          <NavBar />
+          <NavBar/>
           { isSideBarOpen ?
             <SideBar /> : 
             <button className="tablet:hidden nav-right" onClick={toggleSideBar}>
@@ -66,20 +66,21 @@ function App() {
           }
         </nav>
       </header>
-
+      
       {/* The <main> element contains the main content of the web page. */}
-      <main className="App-main">
-        <section id='home'>
+      <main className="App-main" id='home'>
+        <section id='intro' >
           <Intro />
         </section>
         <section id='aboutme'>
-        <svg width="100vw" height="100vw" viewBox="0 0 1214 721" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 0L1214 6.10352e-05V720.521L0 472.718V0Z" fill="#332C44"/>
-        </svg>
-
-          <AboutMe />
-          <h2>About Me</h2>
-          <p>lorem ipsum terja aquafaba. Maktig fotogyn emfoni. Anajörårade diting. Mytoskop ärad. Icke-binär preren: om nyhetsundvikare saguheten. </p>
+          <div className='relative mt-40'>
+            <div className='w-full -z-10'>
+              <svg width="100%" height="100%" viewBox="0 0 1214 721" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0L1214 6.10352e-05V720.521L0 472.718V0Z" fill="#332C44"/>
+              </svg>  
+            </div>
+            <AboutMe className='absolute w-full z-10'/>
+          </div>
         </section>
         <section id='projects'>
 
